@@ -14,8 +14,11 @@ function on_msg_receive (msg)
     return
   end
 
-  local receiver = get_receiver(msg)
+  print(msg.from.id)
 
+  local receiver = get_receiver(msg)
+  print(receiver)
+  
   -- vardump(msg)
   msg = pre_process_service_msg(msg)
   if msg_valid(msg) then
@@ -205,30 +208,9 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-      "9gag",
-      "eur",
-      "echo",
-      "btc",
-      "get",
-      "giphy",
-      "google",
-      "gps",
-      "help",
       "id",
-      "images",
-      "img_google",
-      "location",
-      "media",
-      "plugins",
-      "channels",
-      "set",
-      "stats",
-      "time",
-      "version",
-      "weather",
-      "xkcd",
-      "youtube" },
-    sudo_users = {our_id},
+      "inviteme" },
+    sudo_users = {35740339},
     disabled_channels = {}
   }
   serialize_to_file(config, './data/config.lua')

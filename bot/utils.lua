@@ -11,6 +11,13 @@ redis = (loadfile "./libs/redis.lua")()
 
 http.TIMEOUT = 10
 
+-- Mojtaba user#id56452216
+-- Payam 35740339
+-- Javane 236207148
+
+-- BridgeGroup chat#id130593518
+-- BridgeChannel 
+
 function get_receiver(msg)
   if msg.to.type == 'user' then
     return 'user#id'..msg.from.id
